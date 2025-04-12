@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name" translatable="true">SPY</string>
+    <string name="number_of_players" translatable="true">Number of Players</string>
+    <string name="number_of_spies" translatable="true">Number of Spies</string>
+    <string name="timer" translatable="true">Timer</string>
+    <string name="words_list" translatable="true">Words List</string>
+    <string name="snack_error_of_player_number" translatable="true">The minimum number of players is %1$s and the maximum is %2$s.</string>
+    <string name="place">Place</string>
+    <string name="food">Food</string>
+    <string name="job">Job</string>
+    <string name="animal">Animal</string>
+    <string name="user_defined">User Words</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_words_in_this_category">No words in this category</string>
+    <string name="drop_down_menu">Drop Down Menu</string>
+    <string name="persian">Persian</string>
+    <string name="english">English</string>
+    <string name="checked">Checked</string>
+    <string name="the_number_of_players_was_set_to">The number of players was set to %1$s.</string>
+    <string name="the_number_of_spies_was_set_to">The number of spies was set to %1$s.</string>
+    <string name="time_minutes">%1$s minutes</string>
+    <string name="the_timer_was_set_for_minutes">The timer was set for %1$s minutes.</string>
+    <string name="the_number_of_players_must_be_greater_than_the_number_of_spies">The number of players must be greater than the number of spies.</string>
+    <string name="start_game">Start Game</string>
+    <string name="rules">Rules</string>
+    <string name="back_to_main_screen">Back to Main Screen</string>
+    <string name="finished">Finished</string>
+    <string name="player_counter">Player %1$s</string>
+    <string name="done">Done.</string>
+    <string name="after_clicking_on_this_card_you_will_see_your_role">After clicking on this card, you will see your role.</string>
+    <string name="you_are">"You Are"</string>
+    <string name="spy">Spy</string>
+    <string name="the_word_is">"The Word is"</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="end_game">End Game</string>
+    <string name="sound">Sound</string>
+    <string name="yes_end_game">Yes, End Game</string>
+    <string name="no_keep_playing">No, Keep Playing</string>
+    <string name="are_you_sure_you_want_to_end_the_game">Are you sure you want to end the game?</string>
+    <string name="yes_go_back">Yes, Go Back</string>
+    <string name="do_you_want_to_go_back">Do you want to go back?</string>
+    <string name="time_s_up">Time\'s up!</string>
+    <string name="stop_alarm">Stop Alarm</string>
+    <string name="select_all_in_category">Select All in [%1$s]</string>
+    <string name="search_word">Search Word</string>
+    <string name="add_new_word">Add New Word</string>
+    <string name="introduction">Introduction:\n</string>
+    <string name="in_this_game_one_person_is_chosen_as_the_spy_and_the_remaining_players_must_try_to_identify_the_spy">"In this game, one person is chosen as the spy, and the remaining players must try to identify the spy. "</string>
+    <string name="the_spy_in_turn_must_try_not_to_reveal_themselves_while_attempting_to_guess_the_location">The spy, in turn, must try not to reveal themselves while attempting to guess the location.\n\n</string>
+    <string name="how_to_play">How to Play:\n</string>
+    <string name="_1_the_number_of_players_and_game_time_are_determined">1. The number of players and game time are determined.\n</string>
+    <string name="_2_a_word_location_profession_food_etc_is_randomly_selected_and_shown_to_all_players_except_the_spy">2. A word (location, profession, food, etc.) is randomly selected and shown to all players except the spy.\n</string>
+    <string name="_3_players_take_turns_passing_the_device_around_to_view_the_location">3. Players take turns passing the device around to view the location.\n</string>
+    <string name="_4_the_game_starts_with_players_asking_each_other_questions_at_first_each_player_asks_a_question_about_the_location_to_the_player_next_to_them">4. The game starts with players asking each other questions. At first, each player asks a question about the location to the player next to them.\n</string>
+    <string name="_5_the_questions_should_be_phrased_in_a_way_that_the_spy_cannot_easily_guess_the_location">5. The questions should be phrased in a way that the spy cannot easily guess the location.\n</string>
+    <string name="_6_if_the_spy_is_identified_the_players_win_if_the_spy_can_guess_the_location_or_is_not_identified_the_spy_wins">6. If the spy is identified, the players win. If the spy can guess the location or is not identified, the spy wins.\n\n</string>
+    <string name="objective_of_the_game">Objective of the Game:\n</string>
+    <string name="the_objective_of_the_players_is_to_identify_the_spy">- The objective of the players is to identify the spy.\n</string>
+    <string name="the_objective_of_the_spy_is_to_remain_undetected_and_guess_the_location">- The objective of the spy is to remain undetected and guess the word.\n\n</string>
+    <string name="at_the_end_of_the_game_if_the_spy_identifies_themselves_and_guesses_the_location_they_win">"At the end of the game, if the spy identifies themselves and guesses the location, they win. "</string>
+    <string name="if_the_players_correctly_identify_the_spy_they_win">If the players correctly identify the spy, they win.\n</string>
+    <string name="press_the_back_button_again_to_exit">Press the back button again to exit.</string>
+    <string name="you_should_select_at_least_one_word_from_the_list">You should select at least one word from the list.</string>
+    <string name="save">Save</string>
+    <string name="category">Category</string>
+    <string name="enter_the_word_in_persian">Word in Persian</string>
+    <string name="enter_the_word_in_english">Word in English</string>
+    <string name="a_few_notes">** A few notes:</string>
+    <string name="please_note_that_to_add_a_word_you_must_enter_the_word_in_both_english_and_persian_in_the_fields_above_after_saving_the_word_you_can_view_it_in_the_selected_category">Please note that to add a word, you must enter the word in both English and Persian in the fields above. After saving the word, you can view it in the selected category.</string>
+    <string name="word_list_info">Word List Info</string>
+    <string name="note_a_word_will_be_randomly_selected_from_the_words_that_are_checked_ticked_at_the_start_of_the_game">Note:\nA word will be randomly selected from the words that are checked (ticked) at the start of the game.</string>
+    <string name="the_word_was_added_to_the_word_list">The word \"%1$s\" was added to the word list.</string>
+
+
+
+</resources>

@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name" translatable="true">اسپای</string>
+    <string name="number_of_players" translatable="true">تعداد بازیکنان</string>
+    <string name="number_of_spies" translatable="true">تعداد جاسوس‌ها</string>
+    <string name="timer" translatable="true">تایمر</string>
+    <string name="words_list" translatable="true">لیست کلمات</string>
+    <string name="snack_error_of_player_number" translatable="true">حداقل تعداد بازیکنان %1$s و حداکثر %2$s است.</string>
+    <string name="place">مکان</string>
+    <string name="food">غذا</string>
+    <string name="job">شغل</string>
+    <string name="animal">حیوان</string>
+    <string name="user_defined">کلمات کاربر</string>
+    <string name="confirm">تأیید</string>
+    <string name="cancel">لغو</string>
+    <string name="no_words_in_this_category">هیچ کلمه‌ای در این دسته وجود ندارد</string>
+    <string name="drop_down_menu">منوی کشویی</string>
+    <string name="persian">فارسی</string>
+    <string name="english">انگلیسی</string>
+    <string name="checked">تأیید شده</string>
+    <string name="the_number_of_players_was_set_to">تعداد بازیکنان به %1$s تنظیم شد.</string>
+    <string name="the_number_of_spies_was_set_to">تعداد جاسوس‌ها به %1$s تنظیم شد.</string>
+    <string name="time_minutes">%1$s دقیقه</string>
+    <string name="the_timer_was_set_for_minutes">تایمر برای %1$s دقیقه تنظیم شد.</string>
+    <string name="the_number_of_players_must_be_greater_than_the_number_of_spies">تعداد بازیکنان باید بیشتر از تعداد جاسوس‌ها باشد.</string>
+    <string name="start_game">شروع بازی</string>
+    <string name="rules">قوانین</string>
+    <string name="back_to_main_screen">بازگشت به صفحه اصلی</string>
+    <string name="finished">تمام شد</string>
+    <string name="player_counter">بازیکن %1$s</string>
+    <string name="done">انجام شد.</string>
+    <string name="after_clicking_on_this_card_you_will_see_your_role">پس از کلیک روی این کارت، نقش شما نمایش داده می‌شود.</string>
+    <string name="you_are">شما</string>
+    <string name="spy">جاسوس هستید.</string>
+    <string name="the_word_is">کلمه:</string>
+    <string name="start_timer">شروع تایمر</string>
+    <string name="end_game">پایان بازی</string>
+    <string name="sound">صدا</string>
+    <string name="yes_end_game">بله، بازی را تمام کن</string>
+    <string name="no_keep_playing">نه، ادامه بده</string>
+    <string name="are_you_sure_you_want_to_end_the_game">آیا مطمئن هستید که می‌خواهید بازی را تمام کنید؟</string>
+    <string name="yes_go_back">بله، بازگشت</string>
+    <string name="do_you_want_to_go_back">آیا می‌خواهید به صفحه قبلی برگردید؟</string>
+    <string name="time_s_up">زمان تمام شد!</string>
+    <string name="stop_alarm">خاموش کردن آلارم</string>
+    <string name="select_all_in_category">انتخاب همه در [%1$s]</string>
+    <string name="search_word">جستجوی کلمه</string>
+    <string name="add_new_word">افزودن کلمه جدید</string>
+    <string name="introduction">مقدمه:\n</string>
+    <string name="in_this_game_one_person_is_chosen_as_the_spy_and_the_remaining_players_must_try_to_identify_the_spy">"در این بازی، یک نفر به عنوان جاسوس انتخاب میشود و بقیه بازیکنان باید سعی کنند جاسوس را شناسایی کنند. "</string>
+    <string name="the_spy_in_turn_must_try_not_to_reveal_themselves_while_attempting_to_guess_the_location">جاسوس نیز باید سعی کند خود را لو ندهد و در عین حال مکان مورد نظر را حدس بزند.\n\n</string>
+    <string name="how_to_play">روش بازی:\n</string>
+    <string name="_1_the_number_of_players_and_game_time_are_determined">1. تعداد بازیکنان و زمان بازی مشخص میشود.\n</string>
+    <string name="_2_a_word_location_profession_food_etc_is_randomly_selected_and_shown_to_all_players_except_the_spy">2. یک کلمه (مکان، شغل، غذا و…) به صورت تصادفی انتخاب میشود و به همه بازیکنان به جز جاسوس نشان داده میشود.\n</string>
+    <string name="_3_players_take_turns_passing_the_device_around_to_view_the_location">3. بازیکنان به نوبت دستگاه را به هم میدهند تا مکان را ببینند.\n</string>
+    <string name="_4_the_game_starts_with_players_asking_each_other_questions_at_first_each_player_asks_a_question_about_the_location_to_the_player_next_to_them">4. بازی با پرسیدن سوالات بین بازیکنان شروع میشود. در ابتدا هر بازیکن از بازیکن کناری خود سوالی درباره مکان میپرسد.\n</string>
+    <string name="_5_the_questions_should_be_phrased_in_a_way_that_the_spy_cannot_easily_guess_the_location">5. سوالات باید به گونه‌ای باشد که جاسوس نتواند به راحتی مکان را حدس بزند.\n</string>
+    <string name="_6_if_the_spy_is_identified_the_players_win_if_the_spy_can_guess_the_location_or_is_not_identified_the_spy_wins">6. اگر جاسوس شناسایی شود، بازیکنان برنده میشوند. اگر جاسوس بتواند مکان را حدس بزند یا شناسایی نشود، جاسوس برنده میشود.\n\n</string>
+    <string name="objective_of_the_game">هدف بازی:\n</string>
+    <string name="the_objective_of_the_players_is_to_identify_the_spy">- هدف بازیکنان شناسایی جاسوس است.\n</string>
+    <string name="the_objective_of_the_spy_is_to_remain_undetected_and_guess_the_location">- هدف جاسوس این است که شناخته نشود و کلمه را حدس بزند.\n\n</string>
+    <string name="at_the_end_of_the_game_if_the_spy_identifies_themselves_and_guesses_the_location_they_win">"در پایان بازی، اگر جاسوس خود را معرفی کند و مکان را حدس بزند، برنده میشود. "</string>
+    <string name="if_the_players_correctly_identify_the_spy_they_win">اگر بازیکنان جاسوس را به درستی شناسایی کنند، آنها برنده میشوند.\n</string>
+    <string name="press_the_back_button_again_to_exit">برای خروج دوباره دکمه برگشت را بزنید.</string>
+    <string name="you_should_select_at_least_one_word_from_the_list">باید حداقل یک کلمه از لیست کلمات را انتخاب کنید.</string>
+    <string name="save">ذخیره</string>
+    <string name="category">دسته بندی</string>
+    <string name="enter_the_word_in_persian">کلمه به فارسی</string>
+    <string name="enter_the_word_in_english">کلمه به انگلیسی</string>
+    <string name="a_few_notes">** چند نکته:</string>
+    <string name="please_note_that_to_add_a_word_you_must_enter_the_word_in_both_english_and_persian_in_the_fields_above_after_saving_the_word_you_can_view_it_in_the_selected_category">دقت داشته باشید که برای افزودن یک کلمه، باید این آن را هم به زبان انگلیسی و هم به زبان فارسی در فیلد های بالا وارد کنید و پس از ذخیره کلمه مورد نظر، میتونید آن رو در دسته بندی انتخاب شده مشاهده کنید.</string>
+    <string name="word_list_info">توضیحات صفحه لیست کلمات</string>
+    <string name="note_a_word_will_be_randomly_selected_from_the_words_that_are_checked_ticked_at_the_start_of_the_game">توجه:\nدر شروع بازی، یک کلمه به‌صورت تصادفی از بین کلماتی که تیک خورده‌اند انتخاب خواهد شد.</string>
+    <string name="the_word_was_added_to_the_word_list">کلمه \"%1$s\" به لیست کلمات اضافه شد.</string>
+
+
+</resources>
