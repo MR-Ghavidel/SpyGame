@@ -328,8 +328,9 @@ fun AddWordBottomSheet(
                 )
             )
             Spacer(Modifier.height(4.dp))
+
             //word text field en
-            OutlinedTextField(
+            /*OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = wordTextEnValue,
                 shape = RoundedCornerShape(12.dp),
@@ -356,7 +357,8 @@ fun AddWordBottomSheet(
                     unfocusedPlaceholderColor = Color.LightGray,
                 )
             )
-            Spacer(Modifier.height(4.dp))
+            Spacer(Modifier.height(4.dp))*/
+
             //category
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
@@ -380,6 +382,7 @@ fun AddWordBottomSheet(
                 )
             )
             Spacer(Modifier.height(24.dp))
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center,
@@ -391,8 +394,8 @@ fun AddWordBottomSheet(
                     onClick = {
                         isErrorFa =
                             !(wordTextFaValue.isNotBlank() && wordTextFaValue.isNotEmpty())
-                        isErrorEn =
-                            !(wordTextEnValue.isNotBlank() && wordTextEnValue.isNotEmpty())
+                        isErrorEn = false
+                            //!(wordTextEnValue.isNotBlank() && wordTextEnValue.isNotEmpty())
                         if (!isErrorEn && !isErrorFa) {
                             scope.launch { sheetState.hide() }
                             onConfirm(wordTextFaValue, wordTextEnValue)
@@ -432,8 +435,8 @@ fun AddWordBottomSheet(
                 }
                 Spacer(Modifier.weight(0.1f))
             }
-            Spacer(Modifier.height(24.dp))
-            Text(
+            //Spacer(Modifier.height(24.dp))
+            /*Text(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(start = 12.dp, end = 12.dp, bottom = 4.dp),
@@ -450,7 +453,7 @@ fun AddWordBottomSheet(
                 color = lightRed,
                 style = MaterialTheme.typography.bodyMedium,
                 text = stringResource(R.string.please_note_that_to_add_a_word_you_must_enter_the_word_in_both_english_and_persian_in_the_fields_above_after_saving_the_word_you_can_view_it_in_the_selected_category),
-            )
+            )*/
             //Spacer(Modifier.height(12.dp))
         }
     }
