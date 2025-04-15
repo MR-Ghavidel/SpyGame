@@ -54,7 +54,7 @@ private val LightColorScheme = lightColorScheme(
 
 @Composable
 fun SpyGameTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = true,//isSystemInDarkTheme(),
     typography: Typography,
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit

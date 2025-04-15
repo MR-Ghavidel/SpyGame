@@ -13,9 +13,9 @@ fun InvertibleImage(
     imageRes: Int,
     modifier: Modifier = Modifier
 ) {
-    val isDarkTheme = !isSystemInDarkTheme()
-
-    val colorMatrix = if (isDarkTheme) {
+    //val isLightTheme = !isSystemInDarkTheme()
+    val isLightTheme = false
+    val colorMatrix = if (isLightTheme) {
         ColorMatrix(floatArrayOf(
             -1f,  0f,  0f,  0f,  255f,
             0f, -1f,  0f,  0f,  255f,

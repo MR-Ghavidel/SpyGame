@@ -103,7 +103,7 @@ fun MainScreen(
 
         lastBackPressedTime = currentBackPressedTime
     }
-settingsViewModel.numPlayers
+
     val minPlayer = 3
     val minSpy = 1
     val minTime = 1
