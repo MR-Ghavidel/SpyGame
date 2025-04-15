@@ -3,6 +3,7 @@ package com.example.spygame.ui.screen
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.SystemClock
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
@@ -117,22 +118,22 @@ fun MainScreen(
     val maxPlayer = 25
 
     val snackbarHostState = remember { SnackbarHostState() }
-    //var isSnackbarVisible by rememberSaveable { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState()
     var activeSheet by rememberSaveable { mutableStateOf(BottomSheetType.NONE) }
-    //var isSnackError by rememberSaveable { mutableStateOf(false) }
     var isShowMenu by remember { mutableStateOf(false) }
     val currentLanguage by languageViewModel.currentLanguage.collectAsState()
     val randomWord by wordScreenViewModel.randomWord.collectAsState()
-
+    LaunchedEffect(randomWord) {
+        Log.d("WordViewmodel", "randomWord: $randomWord")
+    }
     // بروزرسانی کلمه رندوم بر اساس زبان
-    if (currentLanguage == Languages.PERSIAN.displayName) {
+/*    if (currentLanguage == Languages.PERSIAN.displayName) {
         wordScreenViewModel.updateRandomWordFa()
     }
     if (currentLanguage == Languages.ENGLISH.displayName) {
         wordScreenViewModel.updateRandomWordEn()
-    }
+    }*/
 
     LaunchedEffect(currentLanguage) {
         delay(500)
@@ -225,7 +226,7 @@ fun MainScreen(
             ) {
                 Spacer(modifier = Modifier.weight(0.5f))
                 InvertibleImage(
-                    imageRes = R.drawable.spy_icon3,
+                    imageRes = R.drawable.spy_icon,// R.drawable.spy_icon3,
                     Modifier.size(180.dp)
                 )
                 Spacer(modifier = Modifier.weight(1f))
@@ -423,58 +424,6 @@ fun MainScreen(
                             }
                         }
                     },
-
-                    /*onClick = {
-                        if (players > spies) {
-                            settingsViewModel.setTime(time)
-                            isSnackError = false
-
-                            if (currentLanguage == Languages.PERSIAN.displayName) {
-                                wordScreenViewModel.updateRandomWordFa()
-                            }
-                            if (currentLanguage == Languages.ENGLISH.displayName) {
-                                wordScreenViewModel.updateRandomWordEn()
-                            }
-
-                            if (randomWord != null) {
-                                navController.navigate(
-                                    route = "${SpyScreens.RolesScreen.name}?players=$players&spies=$spies"
-                                )
-                            }else{
-                                if (!isSnackbarVisible) { // برای جلوگیری از نمایش پشت سر هم اسنک بار وقتی کاربر تند تند کلیک میکنه
-                                    scope.launch {
-                                        isSnackError = true
-                                        isSnackbarVisible = true
-
-                                        snackbarHostState.showSnackbar(
-                                            message = context.getString(R.string.you_should_select_at_least_one_word_from_the_list),
-                                            duration = SnackbarDuration.Short
-                                        )
-
-                                        isSnackbarVisible = false
-                                        delay(150)
-                                        isSnackError = false
-                                    }
-                                }
-                            }
-                        } else {
-                            if (!isSnackbarVisible) { // برای جلوگیری از نمایش پشت سر هم اسنک بار وقتی کاربر تند تند کلیک میکنه
-                                scope.launch {
-                                    isSnackError = true
-                                    isSnackbarVisible = true
-
-                                    snackbarHostState.showSnackbar(
-                                        message = context.getString(R.string.the_number_of_players_must_be_greater_than_the_number_of_spies),
-                                        duration = SnackbarDuration.Short
-                                    )
-
-                                    isSnackbarVisible = false
-                                    delay(150)
-                                    isSnackError = false
-                                }
-                            }
-                        }
-                    },*/
                     colors = ButtonDefaults.buttonColors(
                         containerColor = gold,
                         contentColor = MaterialTheme.colorScheme.primary

@@ -1,5 +1,6 @@
 package com.example.spygame.ui.viewmodel
 
+import android.util.Log
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.ui.state.ToggleableState
 import androidx.lifecycle.ViewModel
@@ -24,15 +25,21 @@ class WordScreenViewModel @Inject constructor(
     private val _wordEntityList = MutableStateFlow<List<WordEntity>>(emptyList())
     val wordEntityList = _wordEntityList.asStateFlow()
 
-    private val _randomWord = MutableStateFlow<String?>(null)
+    private val _randomWord = MutableStateFlow<String?>("null")
     val randomWord: StateFlow<String?> = _randomWord.asStateFlow()
+
+    private var shuffledWordsFa: MutableList<String> = mutableListOf()
+    private var shuffledWordsEn: MutableList<String> = mutableListOf()
 
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
             repository.getAllWords().distinctUntilChanged().collect { listOfWords ->
                 _wordEntityList.value = listOfWords
+                shuffledWordsFa.clear()
+                shuffledWordsEn.clear()
             }
+            Log.d("WordViewmodel", "wordEntityList: $wordEntityList")
         }
     }
 
@@ -76,7 +83,7 @@ class WordScreenViewModel @Inject constructor(
     fun removeWord(wordEntity: WordEntity) =
         viewModelScope.launch { repository.deleteWord(wordEntity) }
 
-    fun updateRandomWordFa() {
+/*    fun updateRandomWordFa() {
         val selectedWords = _wordEntityList.value.filter { it.isSelect }
 
         _randomWord.value = if (selectedWords.isNotEmpty()) {
@@ -84,9 +91,25 @@ class WordScreenViewModel @Inject constructor(
         } else {
             null
         }
+    }*/
+    fun updateRandomWordFa() {
+        val selectedWords = _wordEntityList.value.filter { it.isSelect }.map { it.wordFa }
+
+        if (shuffledWordsFa.isEmpty()) {
+            shuffledWordsFa = selectedWords.shuffled().toMutableList()
+        }
+
+        _randomWord.value = if (shuffledWordsFa.isNotEmpty()) {
+            shuffledWordsFa.removeAt(0)
+        } else {
+            Log.d("WordViewmodel", "first: $shuffledWordsFa")
+            null
+        }
+    Log.d("WordViewmodel", "shuffled: $shuffledWordsFa")
     }
 
-    fun updateRandomWordEn() {
+
+/*    fun updateRandomWordEn() {
         val selectedWords = _wordEntityList.value.filter { it.isSelect }
 
         _randomWord.value = if (selectedWords.isNotEmpty()) {
@@ -94,5 +117,19 @@ class WordScreenViewModel @Inject constructor(
         } else {
             null
         }
+    }*/
+fun updateRandomWordEn() {
+    val selectedWords = _wordEntityList.value.filter { it.isSelect }.map { it.wordEn }
+
+    if (shuffledWordsEn.isEmpty()) {
+        shuffledWordsEn = selectedWords.shuffled().toMutableList()
     }
+
+    _randomWord.value = if (shuffledWordsEn.isNotEmpty()) {
+        shuffledWordsEn.removeAt(0)
+    } else {
+        null
+    }
+}
+
 }

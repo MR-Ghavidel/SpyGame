@@ -96,12 +96,12 @@ fun WordScreen(
     }.collectAsState(initial = false)
     val currentLanguage by languageViewModel.currentLanguage.collectAsState()
     BackHandler {
-        if (currentLanguage == Languages.PERSIAN.displayName) {
+/*        if (currentLanguage == Languages.PERSIAN.displayName) {
             wordScreenViewModel.updateRandomWordFa()
         }
         if (currentLanguage == Languages.ENGLISH.displayName) {
             wordScreenViewModel.updateRandomWordEn()
-        }
+        }*/
         navController.navigateUp()
     }
     Scaffold(
@@ -117,12 +117,12 @@ fun WordScreen(
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            if (currentLanguage == Languages.PERSIAN.displayName) {
+                            /*if (currentLanguage == Languages.PERSIAN.displayName) {
                                 wordScreenViewModel.updateRandomWordFa()
                             }
                             if (currentLanguage == Languages.ENGLISH.displayName) {
                                 wordScreenViewModel.updateRandomWordEn()
-                            }
+                            }*/
                             navController.navigateUp()
                         },
                         modifier = Modifier.clip(RoundedCornerShape(8.dp))

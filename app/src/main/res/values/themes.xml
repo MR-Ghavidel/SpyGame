@@ -3,7 +3,8 @@
     <style name="Theme.SpyGame" parent="android:Theme.Material.Light.NoActionBar" />
     <style name="Theme.SpyGame.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/spy_splash</item>
+
         <item name="postSplashScreenTheme">@style/Theme.SpyGame</item>
     </style>
 </resources>
