@@ -67,7 +67,7 @@ import com.example.spygame.ui.components.SnackbarType
 import com.example.spygame.ui.components.bottomSheet.SpyPickerBottomSheet
 import com.example.spygame.ui.theme.gold
 import com.example.spygame.ui.viewmodel.LanguageViewModel
-import com.example.spygame.ui.viewmodel.SharedViewModel
+import com.example.spygame.ui.viewmodel.SettingsViewModel
 import com.example.spygame.ui.viewmodel.WordScreenViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -78,7 +78,7 @@ import kotlinx.coroutines.launch
 fun MainScreen(
     navController: NavController,
     wordScreenViewModel: WordScreenViewModel,
-    sharedViewModel: SharedViewModel,
+    settingsViewModel: SettingsViewModel,
     languageViewModel: LanguageViewModel
 ) {
     val context = LocalContext.current
@@ -103,14 +103,14 @@ fun MainScreen(
 
         lastBackPressedTime = currentBackPressedTime
     }
-
+settingsViewModel.numPlayers
     val minPlayer = 3
     val minSpy = 1
     val minTime = 1
 
-    var players by rememberSaveable { mutableIntStateOf(minPlayer) }
-    var spies by rememberSaveable { mutableIntStateOf(minSpy) }
-    var time by rememberSaveable { mutableIntStateOf(minTime) }
+    var players by rememberSaveable { mutableIntStateOf(settingsViewModel.numPlayers) }
+    var spies by rememberSaveable { mutableIntStateOf(settingsViewModel.numSpies) }
+    var time by rememberSaveable { mutableIntStateOf(settingsViewModel.gameTime) }
 
     val maxSpy = players - 1
     val maxTime = 100
@@ -147,7 +147,7 @@ fun MainScreen(
                         style = MaterialTheme.typography.titleLarge,
                     )
                 },
-                actions = {
+                /*actions = {
                     IconButton(
                         onClick = {
                             isShowMenu = !isShowMenu
@@ -196,7 +196,7 @@ fun MainScreen(
                             )
                         }
                     }
-                },
+                },*/
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.background,
                     titleContentColor = MaterialTheme.colorScheme.onBackground
@@ -252,9 +252,9 @@ fun MainScreen(
                                 }
                             },
                             onConfirmed = {
-                                players = it
+                                settingsViewModel.updateNumPlayers(it)
+                                players = settingsViewModel.numPlayers
                                 scope.launch {
-                                    //isSnackbarVisible = true
                                     snackbarHostState.currentSnackbarData?.dismiss()
                                     snackbarHostState.showSnackbar(
                                         message = context.getString(
@@ -264,7 +264,6 @@ fun MainScreen(
                                         actionLabel = SnackbarType.SUCCESS.display,
                                         duration = SnackbarDuration.Short
                                     )
-                                    //isSnackbarVisible = false
                                 }
                             },
                             sheetState = sheetState,
@@ -293,9 +292,9 @@ fun MainScreen(
                                 }
                             },
                             onConfirmed = {
-                                spies = it
+                                settingsViewModel.updateNumSpies(it)
+                                spies = settingsViewModel.numSpies
                                 scope.launch {
-                                    //isSnackbarVisible = true
                                     snackbarHostState.currentSnackbarData?.dismiss()
                                     snackbarHostState.showSnackbar(
                                         message = context.getString(
@@ -305,7 +304,6 @@ fun MainScreen(
                                         actionLabel = SnackbarType.SUCCESS.display,
                                         duration = SnackbarDuration.Short
                                     )
-                                    //isSnackbarVisible = false
                                 }
                             },
                             sheetState = sheetState,
@@ -334,8 +332,8 @@ fun MainScreen(
                                 }
                             },
                             onConfirmed = {
-                                time = it
-                                sharedViewModel.setTime(it)
+                                settingsViewModel.updateGameTime(it)
+                                time = settingsViewModel.gameTime
                                 scope.launch {
                                     //isSnackbarVisible = true
                                     snackbarHostState.currentSnackbarData?.dismiss()
@@ -373,7 +371,7 @@ fun MainScreen(
                     onClick = {
                         scope.launch {
                             if (players > spies) {
-                                sharedViewModel.setTime(time)
+                                settingsViewModel.updateGameTime(time)
                                 //isSnackError = false
 
                                 // بروزرسانی کلمه رندوم بر اساس زبان
@@ -428,7 +426,7 @@ fun MainScreen(
 
                     /*onClick = {
                         if (players > spies) {
-                            sharedViewModel.setTime(time)
+                            settingsViewModel.setTime(time)
                             isSnackError = false
 
                             if (currentLanguage == Languages.PERSIAN.displayName) {

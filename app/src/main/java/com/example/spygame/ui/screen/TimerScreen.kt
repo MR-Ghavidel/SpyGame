@@ -60,7 +60,7 @@ import com.example.spygame.ui.theme.lightRed
 import com.example.spygame.ui.theme.red
 import com.example.spygame.ui.theme.white
 import com.example.spygame.ui.viewmodel.LanguageViewModel
-import com.example.spygame.ui.viewmodel.SharedViewModel
+import com.example.spygame.ui.viewmodel.SettingsViewModel
 import kotlinx.coroutines.delay
 import java.util.Locale
 
@@ -68,10 +68,10 @@ import java.util.Locale
 @Composable
 fun TimerScreen(
     navController: NavController,
-    sharedViewModel: SharedViewModel,
+    settingsViewModel: SettingsViewModel,
     languageViewModel: LanguageViewModel
 ) {
-    val time by sharedViewModel.time.collectAsState()
+    val time = settingsViewModel.gameTime
     val currentLanguage by languageViewModel.currentLanguage.collectAsState()
     var remainingTime by rememberSaveable { mutableIntStateOf(time * 60) }
     val progress by animateFloatAsState(

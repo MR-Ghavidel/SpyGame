@@ -1,6 +1,5 @@
 package com.example.spygame.navigation
 
-import android.util.Log
 import androidx.compose.animation.AnimatedContentScope
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -24,14 +23,14 @@ import com.example.spygame.ui.screen.RulesScreen
 import com.example.spygame.ui.screen.TimerScreen
 import com.example.spygame.ui.screen.WordScreen
 import com.example.spygame.ui.viewmodel.LanguageViewModel
-import com.example.spygame.ui.viewmodel.SharedViewModel
+import com.example.spygame.ui.viewmodel.SettingsViewModel
 import com.example.spygame.ui.viewmodel.WordScreenViewModel
 
 
 @Composable
 fun SpyNavigation(
     wordScreenViewModel: WordScreenViewModel,
-    sharedViewModel: SharedViewModel,
+    settingsViewModel: SettingsViewModel,
     languageViewModel: LanguageViewModel
 ) {
     val navController = rememberNavController()
@@ -46,7 +45,7 @@ fun SpyNavigation(
             MainScreen(
                 navController = navController,
                 wordScreenViewModel = wordScreenViewModel,
-                sharedViewModel = sharedViewModel,
+                settingsViewModel = settingsViewModel,
                 languageViewModel = languageViewModel
             )
         }
@@ -70,7 +69,7 @@ fun SpyNavigation(
         animatedComposable(route = SpyScreens.TimerScreen.name, layoutDirection = layoutDirection) {
             TimerScreen(
                 navController = navController,
-                sharedViewModel = sharedViewModel,
+                settingsViewModel = settingsViewModel,
                 languageViewModel = languageViewModel
             )
         }

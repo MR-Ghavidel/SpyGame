@@ -1,9 +1,9 @@
 package com.example.spygame.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.example.spygame.data.AppDatabase
 import com.example.spygame.data.WordDao
-import com.example.spygame.utils.SharedPreferencesHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,9 +27,11 @@ object AppModule {
         return database.wordDao()
     }
 
+
     @Provides
-    fun provideSharedPreferencesHelper(@ApplicationContext context: Context): SharedPreferencesHelper {
-        return SharedPreferencesHelper(context)
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("spy_game_settings_pref", Context.MODE_PRIVATE)
     }
 }
 

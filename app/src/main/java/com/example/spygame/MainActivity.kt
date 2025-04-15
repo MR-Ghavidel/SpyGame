@@ -22,7 +22,7 @@ import com.example.spygame.ui.theme.EnglishTypography
 import com.example.spygame.ui.theme.PersianTypography
 import com.example.spygame.ui.theme.SpyGameTheme
 import com.example.spygame.ui.viewmodel.LanguageViewModel
-import com.example.spygame.ui.viewmodel.SharedViewModel
+import com.example.spygame.ui.viewmodel.SettingsViewModel
 import com.example.spygame.ui.viewmodel.WordScreenViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
@@ -31,7 +31,7 @@ import java.util.Locale
 class MainActivity : ComponentActivity() {
 
     private val wordScreenViewModel: WordScreenViewModel by viewModels()
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val settingsViewModel: SettingsViewModel by viewModels()
     private val languageViewModel: LanguageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             SetAppLanguage(
                 wordScreenViewModel = wordScreenViewModel,
-                sharedViewModel = sharedViewModel,
+                settingsViewModel = settingsViewModel,
                 languageViewModel = languageViewModel,
             )
 
@@ -52,7 +52,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun SetAppLanguage(
     wordScreenViewModel: WordScreenViewModel,
-    sharedViewModel: SharedViewModel,
+    settingsViewModel: SettingsViewModel,
     languageViewModel: LanguageViewModel
 ) {
     val languages by languageViewModel.currentLanguage.collectAsState()
@@ -89,48 +89,9 @@ fun SetAppLanguage(
         ) {
             SpyNavigation(
                 wordScreenViewModel = wordScreenViewModel,
-                sharedViewModel = sharedViewModel,
+                settingsViewModel = settingsViewModel,
                 languageViewModel = languageViewModel
             )
         }
     }
 }
-
-
-/*@Composable
-fun SetAppLanguage(languages: String) {
-    val context = LocalContext.current
-    val configuration = Configuration(context.resources.configuration)
-
-    when (languages) {
-        Languages.PERSIAN.displayName -> configuration.setLocale(Locale(Languages.PERSIAN.displayName))
-        Languages.ENGLISH.displayName -> configuration.setLocale(Locale(Languages.ENGLISH.displayName))
-    }
-
-    context.resources.updateConfiguration(configuration, context.resources.displayMetrics)
-}*/
-
-/*setContent {
-            val currentLanguage by languageViewModel.currentLanguage.collectAsState()
-            val typography =
-                when (currentLanguage) {
-                    Languages.PERSIAN.displayName -> {
-                        PersianTypography
-                    }
-                    Languages.ENGLISH.displayName -> {
-                        EnglishTypography
-                    }
-                    else -> EnglishTypography
-                }
-            SetAppLanguage(languages = currentLanguage)
-
-            SpyGameTheme(
-                typography = typography
-            ) {
-                SpyNavigation(
-                    wordScreenViewModel = wordScreenViewModel,
-                    sharedViewModel = sharedViewModel,
-                    languageViewModel = languageViewModel
-                )
-            }
-        }*/
