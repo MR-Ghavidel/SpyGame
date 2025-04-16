@@ -56,7 +56,10 @@ fun SpyNavigation(
                 languageViewModel = languageViewModel
             )
         }
-        animatedComposable(route = "${SpyScreens.RolesScreen.name}?players={players}&spies={spies}", layoutDirection = layoutDirection) { backStackEntry ->
+        animatedComposable(
+            route = "${SpyScreens.RolesScreen.name}?players={players}&spies={spies}",
+            layoutDirection = layoutDirection
+        ) { backStackEntry ->
             val players = backStackEntry.arguments?.getString("players")?.toInt() ?: 2
             val spies = backStackEntry.arguments?.getString("spies")?.toInt() ?: 1
             RolesScreen(

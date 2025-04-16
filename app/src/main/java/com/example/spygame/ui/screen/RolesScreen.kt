@@ -303,7 +303,7 @@ fun RolesScreen(
                         enter = fadeIn(animationSpec = tween(durationMillis = 1000)),
                         exit = fadeOut(animationSpec = tween(durationMillis = 1000))
                     ) {
-                        CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr){
+                        CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                             LinearProgressIndicator(
                                 progress = { animatedProgress },
                                 modifier = Modifier

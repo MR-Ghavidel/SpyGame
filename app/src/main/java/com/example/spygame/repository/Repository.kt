@@ -1,7 +1,6 @@
 package com.example.spygame.repository
 
 import com.example.spygame.data.WordDao
-import com.example.spygame.model.Category
 import com.example.spygame.model.WordEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

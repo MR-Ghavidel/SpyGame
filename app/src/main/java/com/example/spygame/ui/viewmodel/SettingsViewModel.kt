@@ -6,20 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.spygame.data.pereferences.GamePreferences
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import javax.inject.Inject
-
-/*@HiltViewModel
-class SettingsViewModel @Inject constructor() : ViewModel() {
-    private val _time = MutableStateFlow(5)
-    val gameTime: StateFlow<Int> = _time.asStateFlow()
-
-    fun updateGameTime(time: Int) {
-        _time.value = time
-    }
-}*/
 
 @HiltViewModel
 class SettingsViewModel @Inject constructor(

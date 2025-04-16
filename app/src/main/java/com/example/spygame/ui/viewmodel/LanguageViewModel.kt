@@ -11,7 +11,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LanguageViewModel @Inject constructor(private val gamePreferences: GamePreferences) : ViewModel() {
+class LanguageViewModel @Inject constructor(private val gamePreferences: GamePreferences) :
+    ViewModel() {
 
     private val _currentLanguage = MutableStateFlow(Languages.PERSIAN.displayName)
     val currentLanguage: StateFlow<String> get() = _currentLanguage

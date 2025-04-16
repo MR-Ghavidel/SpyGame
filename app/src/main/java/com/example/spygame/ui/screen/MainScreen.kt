@@ -6,13 +6,6 @@ import android.os.SystemClock
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.FastOutSlowInEasing
-import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,17 +13,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarDuration
@@ -55,7 +41,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.PopupProperties
 import androidx.navigation.NavController
 import com.example.spygame.R
 import com.example.spygame.model.BottomSheetType
@@ -128,12 +113,12 @@ fun MainScreen(
         Log.d("WordViewmodel", "randomWord: $randomWord")
     }
     // بروزرسانی کلمه رندوم بر اساس زبان
-/*    if (currentLanguage == Languages.PERSIAN.displayName) {
-        wordScreenViewModel.updateRandomWordFa()
-    }
-    if (currentLanguage == Languages.ENGLISH.displayName) {
-        wordScreenViewModel.updateRandomWordEn()
-    }*/
+    /*    if (currentLanguage == Languages.PERSIAN.displayName) {
+            wordScreenViewModel.updateRandomWordFa()
+        }
+        if (currentLanguage == Languages.ENGLISH.displayName) {
+            wordScreenViewModel.updateRandomWordEn()
+        }*/
 
     LaunchedEffect(currentLanguage) {
         delay(500)

@@ -32,7 +32,7 @@ import com.example.spygame.ui.theme.gold
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RulesScreen(
-    navController : NavController
+    navController: NavController
 ) {
     Scaffold(
         topBar = {

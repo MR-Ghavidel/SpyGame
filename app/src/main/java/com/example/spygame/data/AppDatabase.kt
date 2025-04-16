@@ -44,7 +44,7 @@ abstract class AppDatabase : RoomDatabase() {
         }
     }
 
-    private class DatabaseCallback : RoomDatabase.Callback() {
+    private class DatabaseCallback : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             CoroutineScope(Dispatchers.IO).launch {
@@ -81,37 +81,3 @@ private suspend fun populateDatabase(wordDao: WordDao) {
         wordDao.insertAll(words)
     }
 }
-
-
-/*private suspend fun populateDatabase(wordDao: WordDao) {
-    val context = MyApplication.applicationContext()
-
-    val defaultPlaces = context.getString(R.string.places).split(", ")
-    val defaultFoods = context.getString(R.string.foods).split(", ")
-    val defaultAnimals = context.getString(R.string.animals).split(", ")
-    val defaultPersons = context.getString(R.string.persons).split(", ")
-
-    val words = mutableListOf<WordEntity>()
-
-    words.addAll(defaultPlaces.map { place ->
-        WordEntity(wordEn = place, wordFa = place, category = Category.PLACE)
-    })
-
-    words.addAll(defaultFoods.map { food ->
-        WordEntity(wordEn = food, wordFa = food, category = Category.FOOD)
-    })
-
-    words.addAll(defaultAnimals.map { animal ->
-        WordEntity(wordEn = animal, wordFa = animal, category = Category.ANIMAL)
-    })
-
-    words.addAll(defaultPersons.map { person ->
-        WordEntity(wordEn = person, wordFa = person, category = Category.JOB)
-    })
-
-    val existingWords = wordDao.getAllWords().first()
-    if (existingWords.isEmpty()) {
-        wordDao.insertAll(words)
-    }
-}*/
-

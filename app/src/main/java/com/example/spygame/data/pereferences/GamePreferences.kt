@@ -36,6 +36,7 @@ class GamePreferences @Inject constructor(
     }
 
     fun getLanguage(): String {
-        return prefs.getString(LANGUAGE_KEY, Languages.PERSIAN.displayName) ?: Languages.PERSIAN.displayName
+        return prefs.getString(LANGUAGE_KEY, Languages.PERSIAN.displayName)
+            ?: Languages.PERSIAN.displayName
     }
 }

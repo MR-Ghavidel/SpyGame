@@ -69,7 +69,6 @@ import com.example.spygame.model.WordEntity
 import com.example.spygame.ui.components.CustomSnackbar
 import com.example.spygame.ui.components.ScrollingFancyIndicatorContainerTabs
 import com.example.spygame.ui.components.SnackbarType
-import com.example.spygame.ui.theme.lightRed
 import com.example.spygame.ui.theme.red
 import com.example.spygame.ui.viewmodel.LanguageViewModel
 import com.example.spygame.ui.viewmodel.WordScreenViewModel
@@ -394,7 +393,7 @@ fun AddWordBottomSheet(
                         isErrorFa =
                             !(wordTextFaValue.isNotBlank() && wordTextFaValue.isNotEmpty())
                         isErrorEn = false
-                            //!(wordTextEnValue.isNotBlank() && wordTextEnValue.isNotEmpty())
+                        //!(wordTextEnValue.isNotBlank() && wordTextEnValue.isNotEmpty())
                         if (!isErrorEn && !isErrorFa) {
                             scope.launch { sheetState.hide() }
                             onConfirm(wordTextFaValue, wordTextEnValue)

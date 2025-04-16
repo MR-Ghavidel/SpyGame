@@ -52,8 +52,13 @@ fun TabIndicatorScope.FancyAnimatedIndicatorWithModifier(index: Int) {
                     tabPosition.right to tabPosition.left
                 }
 
-                val startAnim = startAnimatable ?: Animatable(newStart, Dp.VectorConverter).also { startAnimatable = it }
-                val endAnim = endAnimatable ?: Animatable(newEnd, Dp.VectorConverter).also { endAnimatable = it }
+                val startAnim = startAnimatable ?: Animatable(
+                    newStart,
+                    Dp.VectorConverter
+                ).also { startAnimatable = it }
+                val endAnim = endAnimatable ?: Animatable(newEnd, Dp.VectorConverter).also {
+                    endAnimatable = it
+                }
 
                 // محاسبه مدت زمان انیمیشن متناسب با فاصله
                 val distance = (endAnim.targetValue - startAnim.targetValue).toPx().absoluteValue
@@ -101,7 +106,10 @@ fun TabIndicatorScope.FancyAnimatedIndicatorWithModifier(index: Int) {
                     )
 
                 layout(constraints.maxWidth, constraints.maxHeight) {
-                    placeable.placeRelative(if (layoutDirection == LayoutDirection.Ltr) indicatorStart else indicatorEnd, 0)
+                    placeable.placeRelative(
+                        if (layoutDirection == LayoutDirection.Ltr) indicatorStart else indicatorEnd,
+                        0
+                    )
                 }
             }
             .padding(5.dp)

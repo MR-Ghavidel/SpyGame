@@ -107,18 +107,18 @@ class WordScreenViewModel @Inject constructor(
     }
 
 
-fun updateRandomWordEn() {
-    val selectedWords = _wordEntityList.value.filter { it.isSelect }.map { it.wordEn }
+    fun updateRandomWordEn() {
+        val selectedWords = _wordEntityList.value.filter { it.isSelect }.map { it.wordEn }
 
-    if (shuffledWordsEn.isEmpty()) {
-        shuffledWordsEn = selectedWords.shuffled().toMutableList()
-    }
+        if (shuffledWordsEn.isEmpty()) {
+            shuffledWordsEn = selectedWords.shuffled().toMutableList()
+        }
 
-    _randomWord.value = if (shuffledWordsEn.isNotEmpty()) {
-        shuffledWordsEn.removeAt(0)
-    } else {
-        null
+        _randomWord.value = if (shuffledWordsEn.isNotEmpty()) {
+            shuffledWordsEn.removeAt(0)
+        } else {
+            null
+        }
     }
-}
 
 }

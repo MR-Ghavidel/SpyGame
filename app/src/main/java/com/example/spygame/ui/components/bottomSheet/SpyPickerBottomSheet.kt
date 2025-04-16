@@ -1,6 +1,5 @@
 package com.example.spygame.ui.components.bottomSheet
 
-import com.example.spygame.ui.components.picker.Picker
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
@@ -32,6 +31,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.example.spygame.R
+import com.example.spygame.ui.components.picker.Picker
 import com.example.spygame.ui.components.picker.rememberPickerState
 import com.example.spygame.ui.theme.lightGreen
 

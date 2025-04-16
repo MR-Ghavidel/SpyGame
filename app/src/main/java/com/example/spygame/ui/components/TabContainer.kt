@@ -1,6 +1,5 @@
 package com.example.spygame.ui.components
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -9,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -42,7 +40,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -50,7 +47,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
@@ -61,8 +57,6 @@ import androidx.compose.ui.window.DialogProperties
 import com.example.spygame.R
 import com.example.spygame.model.Category
 import com.example.spygame.model.Languages
-import com.example.spygame.navigation.SpyScreens
-import com.example.spygame.ui.screen.TimerScreenDialog
 import com.example.spygame.ui.theme.gold
 import com.example.spygame.ui.theme.lightRed
 import com.example.spygame.ui.theme.white
@@ -193,7 +187,7 @@ fun ScrollingFancyIndicatorContainerTabs(
                             var isShowDialogAll by rememberSaveable {
                                 mutableStateOf(false)
                             }
-                            if (categoriesList[pageIndex] == Category.USER_DEFINED){
+                            if (categoriesList[pageIndex] == Category.USER_DEFINED) {
                                 Spacer(Modifier.weight(1f))
                                 IconButton(
                                     onClick = {
@@ -208,7 +202,7 @@ fun ScrollingFancyIndicatorContainerTabs(
                                 }
                             }
 
-                            if (isShowDialogAll){
+                            if (isShowDialogAll) {
                                 BasicAlertDialog(
                                     modifier = Modifier
                                         .fillMaxWidth()
@@ -245,7 +239,7 @@ fun ScrollingFancyIndicatorContainerTabs(
                                                     isShowDialogAll = false
                                                     wordScreenViewModel.removeWordList(
                                                         category = Category.USER_DEFINED,
-                                                        wordsList =wordList
+                                                        wordsList = wordList
                                                     )
                                                 },
                                                 colors = ButtonDefaults.buttonColors(
@@ -318,18 +312,18 @@ fun ScrollingFancyIndicatorContainerTabs(
                             var isShowDialog by rememberSaveable {
                                 mutableStateOf(false)
                             }
-                            if (word.category == Category.USER_DEFINED){
+                            if (word.category == Category.USER_DEFINED) {
                                 Spacer(Modifier.weight(1f))
                                 IconButton(
                                     onClick = {
                                         isShowDialog = true
                                     }
                                 ) {
-                                    Icon(Icons.Outlined.Delete,"delete word")
+                                    Icon(Icons.Outlined.Delete, "delete word")
                                 }
                             }
 
-                            if (isShowDialog){
+                            if (isShowDialog) {
                                 BasicAlertDialog(
                                     modifier = Modifier
                                         .fillMaxWidth()

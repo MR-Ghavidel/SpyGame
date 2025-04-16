@@ -59,18 +59,19 @@ fun SetAppLanguage(
     val context = LocalContext.current
     val configuration = Configuration(context.resources.configuration)
     ////////////////////////////////////////
-/*// بروزرسانی کلمه رندوم بر اساس زبان
-    if (languages == Languages.PERSIAN.displayName) {
-        wordScreenViewModel.updateRandomWordFa()
-    }
-    if (languages == Languages.ENGLISH.displayName) {
-        wordScreenViewModel.updateRandomWordEn()
-    }*/
+    /*// بروزرسانی کلمه رندوم بر اساس زبان
+        if (languages == Languages.PERSIAN.displayName) {
+            wordScreenViewModel.updateRandomWordFa()
+        }
+        if (languages == Languages.ENGLISH.displayName) {
+            wordScreenViewModel.updateRandomWordEn()
+        }*/
     ////////////////////////////////////////
     when (languages) {
         Languages.PERSIAN.displayName -> {
             configuration.setLocale(Locale(Languages.PERSIAN.displayName))
         }
+
         Languages.ENGLISH.displayName -> {
             configuration.setLocale(Locale(Languages.ENGLISH.displayName))
         }
