@@ -1,6 +1,7 @@
 package com.example.spygame.repository
 
 import com.example.spygame.data.WordDao
+import com.example.spygame.model.Category
 import com.example.spygame.model.WordEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -19,7 +20,7 @@ class Repository @Inject constructor(private val wordDao: WordDao) {
     suspend fun deleteWord(word: WordEntity) =
         withContext(Dispatchers.IO) { wordDao.deleteWord(word = word) }
 
-    suspend fun addWords(words: List<WordEntity>) =
+    suspend fun addAllWords(words: List<WordEntity>) =
         withContext(Dispatchers.IO) { wordDao.insertAll(words) }
 
     fun getAllWords(): Flow<List<WordEntity>> = wordDao.getAllWords().flowOn(

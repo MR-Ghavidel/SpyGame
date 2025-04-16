@@ -83,15 +83,14 @@ class WordScreenViewModel @Inject constructor(
     fun removeWord(wordEntity: WordEntity) =
         viewModelScope.launch { repository.deleteWord(wordEntity) }
 
-/*    fun updateRandomWordFa() {
-        val selectedWords = _wordEntityList.value.filter { it.isSelect }
+    fun removeWordList(category: Category, wordsList: List<WordEntity>) =
+        viewModelScope.launch {
+            wordsList.filter { it.category == category }.forEach {
+                repository.deleteWord(it)
+            }
 
-        _randomWord.value = if (selectedWords.isNotEmpty()) {
-            selectedWords.random().wordFa
-        } else {
-            null
         }
-    }*/
+
     fun updateRandomWordFa() {
         val selectedWords = _wordEntityList.value.filter { it.isSelect }.map { it.wordFa }
 
@@ -105,19 +104,9 @@ class WordScreenViewModel @Inject constructor(
             Log.d("WordViewmodel", "first: $shuffledWordsFa")
             null
         }
-    Log.d("WordViewmodel", "shuffled: $shuffledWordsFa")
     }
 
 
-/*    fun updateRandomWordEn() {
-        val selectedWords = _wordEntityList.value.filter { it.isSelect }
-
-        _randomWord.value = if (selectedWords.isNotEmpty()) {
-            selectedWords.random().wordEn
-        } else {
-            null
-        }
-    }*/
 fun updateRandomWordEn() {
     val selectedWords = _wordEntityList.value.filter { it.isSelect }.map { it.wordEn }
 

@@ -256,7 +256,7 @@ fun TimerScreen(
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-private fun TimerScreenDialog(
+fun TimerScreenDialog(
     navController: NavController,
     message: String,
     confirmButton: String = stringResource(R.string.confirm),
@@ -265,6 +265,7 @@ private fun TimerScreenDialog(
 ) {
     BasicAlertDialog(
         modifier = Modifier
+            .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
             .background(color = MaterialTheme.colorScheme.onPrimary),
         onDismissRequest = {
@@ -277,30 +278,23 @@ private fun TimerScreenDialog(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            Spacer(Modifier.height(24.dp))
+            Text(
+                text = message,
+                style = MaterialTheme.typography.bodyLarge,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.primary,
+            )
             Spacer(Modifier.height(16.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
+                horizontalArrangement = Arrangement.SpaceAround,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = message,
-                    style = MaterialTheme.typography.bodyLarge,
-                    textAlign = TextAlign.Center,
-                    color = MaterialTheme.colorScheme.primary,
-                )
-            }
-            Spacer(Modifier.height(16.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Spacer(Modifier.width(8.dp))
+                Spacer(Modifier.width(24.dp))
                 Button(
                     modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth(),
+                        .weight(0.8f),
                     onClick = {
                         isShowDialog(false)
                         navController.navigate(
@@ -322,8 +316,7 @@ private fun TimerScreenDialog(
                 Spacer(Modifier.width(8.dp))
                 Button(
                     modifier = Modifier
-                        .weight(1f)
-                        .fillMaxWidth(),
+                        .weight(0.8f),
                     onClick = {
                         isShowDialog(false)
                     }
@@ -335,9 +328,9 @@ private fun TimerScreenDialog(
                         textAlign = TextAlign.Center
                     )
                 }
-                Spacer(Modifier.width(8.dp))
+                Spacer(Modifier.width(24.dp))
             }
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(24.dp))
         }
     }
 }
@@ -352,49 +345,40 @@ private fun AlarmDialog(
 ) {
     BasicAlertDialog(
         modifier = Modifier
+            .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
             .background(color = red),
         onDismissRequest = {
-            //isShowDialog(false)
         },
         properties = DialogProperties(),
     ) {
         Column(
-            modifier = Modifier.height(120.dp)
+            modifier = Modifier
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(Modifier.height(32.dp))
+            Text(
+                text = message,
+                style = MaterialTheme.typography.titleLarge,
+                textAlign = TextAlign.Center,
+                color = white,
+            )
             Spacer(Modifier.height(16.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = message,
-                    style = MaterialTheme.typography.bodyLarge,
-                    textAlign = TextAlign.Center,
-                    color = white,
+            Button(
+                onClick = {
+                    isShowDialog(false)
+                    stopAlarm()
+                },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = lightRed,
+                    contentColor = white
                 )
-            }
-            Spacer(Modifier.height(16.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
             ) {
-                Button(
-                    onClick = {
-                        isShowDialog(false)
-                        stopAlarm()
-                    },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = lightRed,
-                        contentColor = white
-                    )
-                ) {
-                    Text(text = stopButton)
-                }
-                Spacer(Modifier.height(16.dp))
+                Text(text = stopButton)
             }
+            Spacer(Modifier.height(24.dp))
         }
     }
 }

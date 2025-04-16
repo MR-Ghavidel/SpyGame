@@ -60,6 +60,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.spygame.R
 import com.example.spygame.model.Category
@@ -157,7 +158,7 @@ fun WordScreen(
                             Text(
                                 text = stringResource(R.string.note_a_word_will_be_randomly_selected_from_the_words_that_are_checked_ticked_at_the_start_of_the_game),
                                 color = MaterialTheme.colorScheme.primary,
-                                style = MaterialTheme.typography.bodyMedium,
+                                style = MaterialTheme.typography.bodyLarge.copy(lineHeight = 24.sp),
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(16.dp)
@@ -289,15 +290,13 @@ fun AddWordBottomSheet(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    modifier = Modifier.fillMaxWidth(),
-                    text = stringResource(R.string.add_new_word),
-                    textAlign = TextAlign.Center,
-                    color = MaterialTheme.colorScheme.secondary,
-                    style = MaterialTheme.typography.titleSmall
-                )
-            }
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = stringResource(R.string.add_new_word),
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.secondary,
+                style = MaterialTheme.typography.titleSmall
+            )
             Spacer(Modifier.height(8.dp))
             //word text field fa
             OutlinedTextField(

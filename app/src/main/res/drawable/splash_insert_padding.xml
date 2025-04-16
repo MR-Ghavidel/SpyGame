@@ -1,5 +1,5 @@
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@drawable/spy_splash_100x100"
+    android:drawable="@drawable/ic_splash"
     android:insetLeft="50dp"
     android:insetRight="50dp"
     android:insetTop="50dp"
